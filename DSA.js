@@ -127,3 +127,34 @@ var longestConsecutive = function(nums) {
 
     return longest;
 };
+
+
+var groupAnagrams = function(strs) {
+    if (strs.length == 1){
+        return [strs]
+    }
+
+    let results = {}
+
+    for (let i = 0 ; i < strs.length; i++){
+        let curr = strs[i]
+        let sortedStr = curr.split("").sort().join("")
+
+        if(!results[sortedStr]){
+            results[sortedStr] = [curr]
+        } else {
+            results[sortedStr].push(curr)
+        }
+    }
+
+
+return Object.values(results)
+};
+
+
+// if strs.length == 1 return strs
+// if strs.length == 0 return nothing
+// first make a copy of strs array
+// secondly  go through all of strs array compare their ascii values to each other 
+// thidly  go through the array and then if the values are the same, put them in an array together
+// lastly return each strs with index to the original array
