@@ -89,3 +89,41 @@ var productExceptSelf = function(nums) {
 // we should iterate through the numbs array foward 
 
 //
+
+
+var moveZeroes = function(nums) {
+    let zeroCount = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === 0) {
+            zeroCount++;
+            nums.splice(i, 1);
+            i--; 
+        }
+    }
+
+    for (let i = 0; i < zeroCount; i++) {
+        nums.push(0);
+    }
+
+    return nums;
+};
+
+var longestConsecutive = function(nums) {
+    if (nums.length === 0) return 0;
+    nums.sort((a, b) => a - b);
+    let longest = 1;
+    let count = 1
+
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] === nums[i - 1] + 1) {
+            count++;
+        } else if (nums[i] !== nums[i - 1]) {
+            count = 1;
+        }
+
+        longest = Math.max(longest, count);
+    }
+
+    return longest;
+};
