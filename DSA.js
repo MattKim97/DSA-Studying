@@ -158,3 +158,23 @@ return Object.values(results)
 // secondly  go through all of strs array compare their ascii values to each other 
 // thidly  go through the array and then if the values are the same, put them in an array together
 // lastly return each strs with index to the original array
+
+
+var isPalindrome = function(s) {
+    if (s === " "){
+        return true
+    }
+   noSpecChar = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+   reverseNoSpecChar = noSpecChar.split("").reverse().join("")
+
+   console.log(noSpecChar)
+    console.log(reverseNoSpecChar)
+
+   if (noSpecChar == reverseNoSpecChar){
+       return true
+   } else {
+       return false
+   }
+};
+
+
