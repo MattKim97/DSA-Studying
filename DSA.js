@@ -177,4 +177,10 @@ var isPalindrome = function(s) {
    }
 };
 
-
+//first check to see if the string is empty
+// if it is empty return true
+// remove all special characters and spaces
+// reverse the string
+// compare the two strings
+// if they are the same return true
+// else return false
