@@ -184,3 +184,34 @@ var isPalindrome = function(s) {
 // compare the two strings
 // if they are the same return true
 // else return false
+
+
+var maxProfit = function(prices) {
+
+    let profit = 0
+
+    let current = prices[0]
+
+    for (let i = 1; i<prices.length; i++){
+
+
+        if (current < prices[i]){
+            if (profit < prices[i] - current)
+            profit = prices[i] - current
+        } else {
+            current = prices[i]
+        }
+    }
+
+    return profit
+};
+
+// set profit to equal zero
+
+// check start of array "set that to current"
+
+// check next element in array, if element is higher, set profit to current minus higher
+
+// if element is lower, set element as new current, and then continue , profit will remain unchanged
+
+// return profit
