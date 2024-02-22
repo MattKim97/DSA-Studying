@@ -215,3 +215,27 @@ var maxProfit = function(prices) {
 // if element is lower, set element as new current, and then continue , profit will remain unchanged
 
 // return profit
+
+
+var isValid = function(s) {
+    const stack = [];
+    const bracketPairs = {
+        '(': ')',
+        '{': '}',
+        '[': ']'
+    };
+
+    for (let i = 0; i < s.length; i++) {
+        const currentBracket = s[i];
+
+        if (bracketPairs.hasOwnProperty(currentBracket)) {
+            stack.push(currentBracket);
+        } else {
+            if (stack.length === 0 || bracketPairs[stack.pop()] !== currentBracket) {
+                return false;
+            }
+        }
+    }
+
+    return stack.length === 0;
+};
