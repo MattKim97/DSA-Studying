@@ -239,3 +239,34 @@ var isValid = function(s) {
 
     return stack.length === 0;
 };
+
+
+var flipAndInvertImage = function(image) {
+
+    let reversedImage = image.map((arr) => arr.reverse())
+
+    let invertedImage = reversedImage.map((arr) => {
+        for (let i = 0; i < arr.length; i++){
+            if(arr[i] === 0) {
+                arr[i] = 1
+            } else {
+                arr[i] = 0
+            }
+        }
+        return arr
+    })
+
+    return invertedImage
+
+};
+
+/*
+First we will reverse the image
+map through the image and reverse each array
+then we will invert the image
+map through the image and then iterate through each array
+if the element is 0, set it to 1
+if the element is 1, set it to 0
+
+
+*/
