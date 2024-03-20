@@ -270,3 +270,40 @@ if the element is 1, set it to 0
 
 
 */
+
+var maxArea = function(height) {
+    if (height.length === 0){
+        return 0
+    }
+
+    if (height.length === 2){
+        return (Math.min(height[0],height[1]))
+    }
+
+    let firstP = 0
+
+    let secondP = height.length - 1
+
+    let resheight = Math.min(height[firstP],height[secondP])
+
+    let area = resheight * (secondP - firstP)
+
+    while (firstP < secondP){
+    if (height[firstP] > height[secondP]){
+        secondP --
+    } else {
+        firstP ++
+    }
+
+    newHeight = Math.min(height[firstP],height[secondP])
+
+    newArea = newHeight * (secondP - firstP)
+
+    area = Math.max(area,newArea)
+
+    }
+
+    return area
+
+
+};
