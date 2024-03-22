@@ -396,3 +396,24 @@ var threeSum = function(nums) {
     
 
 };
+
+// if the length of the array is 3, check to see if the sum of the array is 0
+// if it is return the array
+// if not return an empty array
+// if the length of the array is less than 3 return an empty array
+// sort the array
+// iterate through the array
+// if the element is not the same as the previous element, set the left pointer to the next element
+// set the right pointer to the last element
+// find the complement of the element to make it zero
+// while the left pointer is less than the right pointer
+// if the sum of the left and right pointer is equal to the complement
+// push the elements to the results array
+// skip duplicates
+// increment the left pointer
+// decrement the right pointer
+// if the sum of the left and right pointer is less than the complement
+// increment the left pointer
+// else decrement the right pointer
+
+
