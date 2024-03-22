@@ -306,4 +306,48 @@ var maxArea = function(height) {
     return area
 
 
+    var threeSum = function(nums) {
+        if (nums.length === 3){
+            let sum = 0
+            nums.forEach((num) => sum += num)
+            if (sum == 0) {
+                return [nums]
+            }
+            else {
+                return []
+            }
+        }
+        else if(nums.length < 3){
+            return []
+        }
+    
+        const res = []
+    
+        nums.sort((a,b) => a - b)
+    
+        for (let i = 0; i < nums.length-2 ; i++){
+             if (i === 0 || (i > 0 && nums[i] !== nums[i - 1])) { // Skip duplicates
+                let left = i + 1;
+                let right = nums.length - 1;
+                let sum = 0 - nums[i]; // Find the complement to make it zero
+    
+                while (left < right) {
+                    if (nums[left] + nums[right] === sum) {
+                        res.push([nums[i], nums[left], nums[right]]);
+                        while (left < right && nums[left] === nums[left + 1]) left++; // Skip duplicates
+                        while (left < right && nums[right] === nums[right - 1]) right--; // Skip duplicates
+                        left++;
+                        right--;
+                    } else if (nums[left] + nums[right] < sum) {
+                        left++;
+                    } else {
+                        right--;
+                    }
+                }
+            }
+        }
+        return res;
+        
+    
+    };
 };
