@@ -448,3 +448,7 @@ if no letter in object, add to the objhect and then increment length
 if you do record the length return math.max of larger value and then restart from there
 
 */
+
+
+/* 
+ It iterates through the string, maintaining a character index object (charIndex) to keep track of the most recent index where each character appeared. It also maintains the start index, which represents the start of the current substring without repeating characters. When a repeating character is encountered, it updates the start index accordingly. At each step, the maximum length of the non-repeating substring is updated. Finally, it returns the maximum length found.*/
