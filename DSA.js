@@ -417,3 +417,34 @@ var threeSum = function(nums) {
 // else decrement the right pointer
 
 
+var lengthOfLongestSubstring = function(s) {
+    let charIndex = {};
+   let maxLength = 0;
+   let start = 0;
+
+   for (let i = 0; i < s.length; i++) {
+       const char = s[i];
+       if (char in charIndex && charIndex[char] >= start) {
+           start = charIndex[char] + 1;
+       } else {
+           maxLength = Math.max(maxLength, i - start + 1);
+       }
+       charIndex[char] = i;
+   }
+
+   return maxLength;
+};
+
+
+/*
+start with create a variable to hold the length 
+return math.max of the largest value
+return value at the end
+
+create an object to hold each instance of a letter
+while iterating through the subvstring, if there is the letter within the object record length
+if no letter in object, add to the objhect and then increment length
+
+if you do record the length return math.max of larger value and then restart from there
+
+*/
