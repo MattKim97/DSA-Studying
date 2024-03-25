@@ -452,3 +452,60 @@ if you do record the length return math.max of larger value and then restart fro
 
 /* 
  It iterates through the string, maintaining a character index object (charIndex) to keep track of the most recent index where each character appeared. It also maintains the start index, which represents the start of the current substring without repeating characters. When a repeating character is encountered, it updates the start index accordingly. At each step, the maximum length of the non-repeating substring is updated. Finally, it returns the maximum length found.*/
+
+
+ var findDuplicate = function(nums) {
+    let tortoise = nums[0];
+let hare = nums[0];
+
+// Phase 1: Find the intersection point of the two runners
+while (true) {
+    tortoise = nums[tortoise];
+    hare = nums[nums[hare]];
+    
+    if (tortoise === hare) {
+        break;
+    }
+}
+
+// Phase 2: Find the entrance to the cycle
+var findDuplicate = function(nums) {
+    let tortoise = nums[0];
+    let hare = nums[0];
+    
+    // Phase 1: Find the intersection point of the two runners
+    while (true) {
+        tortoise = nums[tortoise];
+        hare = nums[nums[hare]];
+        
+        if (tortoise === hare) {
+            break;
+        }
+    }
+    
+    // Phase 2: Find the entrance to the cycle
+    tortoise = nums[0];
+    while (tortoise !== hare) {
+        tortoise = nums[tortoise];
+        hare = nums[hare];
+    }
+    
+    return tortoise;
+};
+ }
+
+ /*Initialization: Initially, both tortoise and hare are set to the first element of the array. The idea is to imagine these pointers moving through the array like runners on a track.
+
+Phase 1 - Finding Intersection Point:
+
+In each iteration of the loop, tortoise moves one step forward (tortoise = nums[tortoise]), while hare moves two steps forward (hare = nums[nums[hare]]).
+If there's a duplicate number in the array, eventually tortoise and hare will land on the same number. This is because hare is moving faster and will "lap" the tortoise.
+When tortoise and hare meet, it indicates that there's a cycle in the sequence. This is a fundamental property of linked lists and is leveraged here.
+Phase 2 - Finding Entrance to Cycle:
+
+Once the intersection point is found, we reset tortoise to the beginning of the array and keep hare at the intersection point.
+Then, both tortoise and hare move forward at the same pace (one step at a time). Because the tortoise starts from the beginning of the array and the hare starts from the intersection point, they will eventually meet at the entrance of the cycle.
+This is because the distance between the beginning of the array and the entrance of the cycle is the same as the distance between the intersection point and the entrance of the cycle.
+Return Duplicate Number:
+
+Once tortoise and hare meet at the entrance to the cycle, the value they both point to will be the duplicate number.*/
