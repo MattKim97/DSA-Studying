@@ -509,3 +509,21 @@ This is because the distance between the beginning of the array and the entrance
 Return Duplicate Number:
 
 Once tortoise and hare meet at the entrance to the cycle, the value they both point to will be the duplicate number.*/
+
+
+var containsDuplicate = function(nums) {
+    const visited = {}
+
+    for (let i = 0; i < nums.length; i++){
+
+        let curr = nums[i]
+
+        if (visited[curr]){
+            return true
+        } else {
+            visited[curr] = true
+        }
+    }
+        return false
+    
+};
