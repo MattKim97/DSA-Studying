@@ -527,3 +527,28 @@ var containsDuplicate = function(nums) {
         return false
     
 };
+
+var mergeAlternately = function(word1, word2) {
+    let res = ""
+    while (word1.length && word2.length){
+        let letter1 = word1.slice(0,1)
+        let letter2 = word2.slice(0,1)
+        res += (letter1)
+        res += (letter2)
+        word1 = word1.slice(1,word1.length)
+        word2 = word2.slice(1,word2.length)
+
+    }
+    if (word1.length > 0 && word2.length === 0){
+        res += (word1)
+    }
+       if (word2.length > 0 && word1.length === 0){
+        res += (word2)
+    }
+    return res
+};
+
+/*
+
+
+*/
