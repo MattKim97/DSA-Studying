@@ -549,6 +549,11 @@ var mergeAlternately = function(word1, word2) {
 };
 
 /*
-
-
+First we will create a variable to hold the result
+then we will iterate through the words while both words have length
+we will slice the first letter of each word and add them to the result
+then we will reassign the words to the word without the first letter
+keep doing this while both have length
+if one word has length and the other doesn't, add the remaining word to the result
+return the result
 */
