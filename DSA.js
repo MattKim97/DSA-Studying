@@ -557,3 +557,19 @@ keep doing this while both have length
 if one word has length and the other doesn't, add the remaining word to the result
 return the result
 */
+
+
+var kidsWithCandies = function(candies, extraCandies) {
+    let largest = Math.max(...candies)
+    let res = []
+    for (let i = 0 ; i < candies.length; i++){
+        let curr = candies[i]
+        curr = curr += extraCandies
+        if (curr >= largest){
+            res.push(true)
+        } else {
+            res.push(false)
+        }
+    }
+    return res
+};
