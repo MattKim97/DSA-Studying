@@ -573,3 +573,10 @@ var kidsWithCandies = function(candies, extraCandies) {
     }
     return res
 };
+
+// find the max in the array
+//create empty array variable to hold results
+// for loop iterate through array of candies
+// add extacandies to current element in loop, check to see if greater than or equal to max, depending on whether
+// it is greater or lesser i will add false or true,
+// return the results array
