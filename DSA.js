@@ -580,3 +580,24 @@ var kidsWithCandies = function(candies, extraCandies) {
 // add extacandies to current element in loop, check to see if greater than or equal to max, depending on whether
 // it is greater or lesser i will add false or true,
 // return the results array
+
+var findMaxAverage = function(nums, k) {
+    let maxSum = 0;
+    let sum = 0;
+
+    // Calculate the sum of the first k elements
+    for (let i = 0; i < k; i++) {
+        sum += nums[i];
+    }
+
+    maxSum = sum;
+
+    // Slide the window to calculate the sum of subsequent subarrays
+    for (let i = k; i < nums.length; i++) {
+        sum += nums[i] - nums[i - k];
+        maxSum = Math.max(maxSum, sum);
+    }
+
+    // Calculate the maximum average
+    return maxSum / k;
+};
