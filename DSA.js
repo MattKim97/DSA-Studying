@@ -601,3 +601,40 @@ var findMaxAverage = function(nums, k) {
     // Calculate the maximum average
     return maxSum / k;
 };
+
+var gcdOfStrings = function(str1, str2) {    
+    if (str1[0] !== str2[0]){
+        return ""
+    }
+
+    let i = 1
+    while (i <= str2.length){
+        let start = str1[0]
+        let curr1 = str1[i]
+        let curr2 = str2[i]
+        if (curr2 === undefined){
+            console.log(str1[i],start)
+            if(str1[i] == start){
+            return str1.slice(0,i)
+            } else {
+                return ""
+            }
+        }
+
+        if (curr1 && curr2 === start){
+            return str1.slice(0,i)
+        }
+        if (curr1 === curr2){
+            i++
+        } else {
+            return ""
+        }
+    }
+};
+
+
+// pattern recognition
+// first check through each string, check to see if they are similar and that they can reproduce the same pattern
+// if a subsection of str1 and str2 are different return an empty string
+// then return the smallest pattern that can diveide each string
+// doesnt work will figure it out later
