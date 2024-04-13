@@ -638,3 +638,50 @@ var gcdOfStrings = function(str1, str2) {
 // if a subsection of str1 and str2 are different return an empty string
 // then return the smallest pattern that can diveide each string
 // doesnt work will figure it out later
+
+var canPlaceFlowers = function(flowerbed, n) {
+    if (flowerbed.length === 2 && flowerbed[0] === 0 && flowerbed[1] === 0){
+        if (n === 1){
+            return true
+        } else return false
+    }
+    if ((flowerbed.length / 3) < n){
+        return false
+    }
+    if (flowerbed[0] == 0 && flowerbed[1] == 0){
+        n--
+    }
+     if(n === 0){
+                return true
+            }
+    if(flowerbed[flowerbed.length-1] == 0 && flowerbed[flowerbed.length-2] == 0){
+        n--
+    }
+     if(n === 0){
+                return true
+            }
+    if (flowerbed.length === 1 && flowerbed[0] === 0){
+        n--
+    }
+     if(n === 0){
+                return true
+            }
+    for (let i = 0 ; i < flowerbed.length - 2; i++){
+        if(flowerbed[i] == 0){
+            if (flowerbed[i+1] == 0 && flowerbed[i+2] == 0){
+                n--
+                i++
+            }
+            if(n === 0){
+                return true
+            }
+        }
+    }
+    return n === 0
+};
+
+//first check to see what n is
+// then iterate trhough the flowerbed, if curr ele is 0, and curr ele + 1 and curr ele + 2 == 0, 
+// minus 1 from n
+// if n === 0 return true, otherwise return false
+// does not work        
