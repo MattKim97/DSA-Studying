@@ -685,3 +685,29 @@ var canPlaceFlowers = function(flowerbed, n) {
 // minus 1 from n
 // if n === 0 return true, otherwise return false
 // does not work        
+
+
+var findDifference = function(nums1, nums2) {
+    let res = []
+    let num1Set = new Set
+    let num2Set = new Set
+    for(let i = 0; i < nums1.length; i++){
+        let curr = nums1[i]
+        if (!nums2.includes(curr)){
+            num1Set.add(curr)
+        }
+    }
+      for(let i = 0; i < nums2.length; i++){
+        let curr = nums2[i]
+        if (!nums1.includes(curr)){
+            num2Set.add(curr)
+        }
+    }
+    let num1arr = []
+    let num2arr = []
+    num1Set.forEach((curr) => num1arr.push(curr))
+    num2Set.forEach((curr) => num2arr.push(curr))
+    res.push(num1arr,num2arr)
+    return res
+};
+
