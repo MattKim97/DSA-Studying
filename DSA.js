@@ -711,3 +711,15 @@ var findDifference = function(nums1, nums2) {
     return res
 };
 
+/*
+first create an empty array to hold the results
+create two empty sets to hold the unique values
+iterate through the first array, if the current element is not in the second array, add it to the first set
+iterate through the second array, if the current element is not in the first array, add it to the second set
+create two empty arrays to hold the values of the sets
+iterate through the first set and add the values to the first array
+iterate through the second set and add the values to the second array
+push the two arrays to the results array
+
+
+*/
