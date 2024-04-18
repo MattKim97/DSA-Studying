@@ -723,3 +723,18 @@ push the two arrays to the results array
 
 
 */
+
+var isSubsequence = function(s, t) {
+    let i = 0;
+     for (let j = 0; j < t.length && i < s.length; j++){
+         if (t[j] === s[i]){
+             i++;
+         }
+     }
+     return i === s.length;
+ };
+
+    // iterate through the string, if the current element in the string is equal to the current element in the substring
+    // increment the substring
+    // return true if the substring is equal to the string
+    
