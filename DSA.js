@@ -712,3 +712,11 @@ var uniqueOccurrences = function (arr) {
 
   return uniqueValues.size === values.length;
 };
+
+// create an empty object to hold the values
+// iterate through the array, if the current element is not in the object, add it to the object
+// if it is in the object increment the value
+// get the values of the object
+// create a set to hold the unique values
+// return true if the size of the set is equal to the length of the values
+
