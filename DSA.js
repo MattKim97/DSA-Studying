@@ -720,3 +720,14 @@ var uniqueOccurrences = function (arr) {
 // create a set to hold the unique values
 // return true if the size of the set is equal to the length of the values
 
+var reverseList = function(head) {
+  let prev = null
+  let current = head
+  while (current) {
+      const next = current.next;
+      current.next = prev;
+      prev = current
+      current = next
+  }
+  return prev
+};
