@@ -731,3 +731,12 @@ var reverseList = function(head) {
   }
   return prev
 };
+
+// create a previous variable to hold the previous node
+// create a current variable to hold the head
+// iterate through the linked list
+// set the next variable to the next node
+// set the current next to the previous node
+// set the previous node to the current node
+// set the current node to the next node
+// return the previous node
