@@ -761,3 +761,10 @@ var guessNumber = function(n) {
   // This line should never be reached
   return -1;
 };
+/*
+We maintain two pointers, low and high, which represent the range of numbers we're considering.
+We continuously narrow down this range by adjusting low or high based on the result of the guess.
+If the guess is correct, we return the current middle value.
+If the guess is too high, we adjust high to middle - 1.
+If the guess is too low, we adjust low to middle + 1.
+*/
