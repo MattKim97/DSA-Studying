@@ -740,3 +740,24 @@ var reverseList = function(head) {
 // set the previous node to the current node
 // set the current node to the next node
 // return the previous node
+
+var guessNumber = function(n) {
+  let low = 1; // to check every number between 1 and n
+  let high = n;
+  
+  while (low <= high) { // while low is less than higher, keep running through this logic
+      let middle = Math.floor((low + high) / 2); // find the middle of both low and high  
+      let res = guess(middle); // guess
+      
+      if (res === 0) { // if res == 0 we found our number
+          return middle; // return
+      } else if (res === -1) { // if middle is smaller than number res will return < 1
+          high = middle - 1; // assign high to middle -1
+      } else { // if middle is greater than numbe res will return < 1
+          low = middle + 1; // then re reassign low to middle + 1
+      }
+  }
+  
+  // This line should never be reached
+  return -1;
+};
