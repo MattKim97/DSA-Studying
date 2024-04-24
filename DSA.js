@@ -813,3 +813,14 @@ var removeNthFromEnd = function(head, n) {
 
   return placeholder.next; // Return the head of the modified list
 };
+
+/*
+We create a placeholder node to handle edge cases.
+We point the placeholder's next to the head of the original list.
+We initialize two pointers, first and second, to the placeholder node.
+We move the first pointer n + 1 steps ahead.
+We move both pointers simultaneously until the first pointer reaches the end.
+We remove the nth node from the end.
+We return the head of the modified list.
+*/
+  
