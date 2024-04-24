@@ -790,3 +790,26 @@ If the value of the current node is equal to the target value, return the curren
 If the target value is less than the current node's value, search the left subtree.
 If the target value is greater than the current node's value, search the right subtree.
 */
+
+var removeNthFromEnd = function(head, n) {
+  let placeholder = new ListNode(0); // Create a placeholder node to handle edge cases
+  placeholder.next = head; // Point placeholder's next to the head of the original list
+  let first = placeholder; // Initialize first pointer to placeholder node
+  let second = placeholder; // Initialize second pointer to placeholder node
+
+  // Move first pointer n + 1 steps ahead
+  for (let i = 0; i <= n; i++) {
+      first = first.next;
+  }
+
+  // Move both pointers simultaneously until first reaches the end
+  while (first !== null) {
+      first = first.next;
+      second = second.next;
+  }
+
+  // Remove the nth node from end
+  second.next = second.next.next;
+
+  return placeholder.next; // Return the head of the modified list
+};
