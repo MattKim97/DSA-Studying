@@ -783,3 +783,10 @@ var searchBST = function(root, val) {
       return searchBST(root.right, val); // Search in the right subtree
   }
 };
+
+/*
+If the root is null, the tree is empty, so return null.
+If the value of the current node is equal to the target value, return the current node.
+If the target value is less than the current node's value, search the left subtree.
+If the target value is greater than the current node's value, search the right subtree.
+*/
