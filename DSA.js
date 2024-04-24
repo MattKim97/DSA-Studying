@@ -768,3 +768,18 @@ If the guess is correct, we return the current middle value.
 If the guess is too high, we adjust high to middle - 1.
 If the guess is too low, we adjust low to middle + 1.
 */
+var searchBST = function(root, val) {
+  if (!root) {
+      return null; // If the root is null, the tree is empty
+  }
+  
+  if (root.val === val) {
+      return root; // Found the value, return the subtree rooted at this node
+  } 
+  
+  if (val < root.val) {
+      return searchBST(root.left, val); // Search in the left subtree
+  } else {
+      return searchBST(root.right, val); // Search in the right subtree
+  }
+};
