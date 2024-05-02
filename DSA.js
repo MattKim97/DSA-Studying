@@ -824,3 +824,8 @@ We remove the nth node from the end.
 We return the head of the modified list.
 */
   
+var merge = function(nums1, m, nums2, n) {
+  nums1.splice(m, nums1.length - m, ...nums2); // Replace elements in nums1 from index m onwards with elements from nums2
+  nums1.sort((a, b) => a - b); // Sort nums1 in ascending order
+};
+
