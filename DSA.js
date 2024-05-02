@@ -829,3 +829,7 @@ var merge = function(nums1, m, nums2, n) {
   nums1.sort((a, b) => a - b); // Sort nums1 in ascending order
 };
 
+/*
+Replace elements in nums1 from index m onwards with elements from nums2.
+Sort nums1 in ascending order.
+*/
