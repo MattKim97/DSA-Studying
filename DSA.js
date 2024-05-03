@@ -856,3 +856,15 @@ var removeElement = function(nums, val) {
   Return the length of the modified array.
   */
  
+  var removeDuplicates = function(nums) {
+    const holder = {}
+    for (let i = nums.length - 1; i >= 0; i--){
+        let curr = nums[i]
+        if (!holder[curr]){
+            holder[curr] = true
+        } else {
+            nums.splice(i,1)
+        }
+    }
+};
+
