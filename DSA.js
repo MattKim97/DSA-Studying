@@ -833,3 +833,19 @@ var merge = function(nums1, m, nums2, n) {
 Replace elements in nums1 from index m onwards with elements from nums2.
 Sort nums1 in ascending order.
 */
+var removeElement = function(nums, val) {
+  let index = []
+  for (let i = 0; i<nums.length; i++){
+      if (nums[i] === val){
+          index.push(i)
+      }
+  }
+      // Remove elements in reverse order to avoid messing up positions
+      for (let i = index.length - 1; i >= 0; i--) {
+          nums.splice(index[i], 1);
+      }
+  
+  return nums.length
+  
+  };
+  
