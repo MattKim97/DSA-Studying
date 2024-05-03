@@ -868,3 +868,9 @@ var removeElement = function(nums, val) {
     }
 };
 
+/*
+Create an object to store the elements.
+Iterate through the array in reverse order.
+If the current element is not in the object, add it to the object.
+If the current element is in the object, remove it from the array.
+*/
