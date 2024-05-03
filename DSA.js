@@ -848,4 +848,11 @@ var removeElement = function(nums, val) {
   return nums.length
   
   };
-  
+
+  /*
+  Create an array to store the indexes of the elements to be removed.
+  Iterate through the array and store the indexes of the elements to be removed.
+  Remove the elements in reverse order to avoid messing up positions.
+  Return the length of the modified array.
+  */
+ 
