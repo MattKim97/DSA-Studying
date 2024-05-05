@@ -874,3 +874,12 @@ Iterate through the array in reverse order.
 If the current element is not in the object, add it to the object.
 If the current element is in the object, remove it from the array.
 */
+
+var strStr = function(haystack, needle) {
+  if (haystack.includes(needle)){
+      return haystack.indexOf(needle)
+  } else{
+      return -1
+  }
+};
+
