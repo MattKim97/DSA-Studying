@@ -883,3 +883,9 @@ var strStr = function(haystack, needle) {
   }
 };
 
+/*
+Check if the haystack includes the needle.
+If the haystack includes the needle, return the index of the needle in the haystack.
+If the haystack does not include the needle, return -1.
+*/
+
