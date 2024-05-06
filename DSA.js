@@ -889,3 +889,19 @@ If the haystack includes the needle, return the index of the needle in the hayst
 If the haystack does not include the needle, return -1.
 */
 
+var removeDuplicates = function(nums) {
+  const holder = {}
+  for (let i = nums.length - 1; i >= 0; i--){
+      let curr = nums[i]
+      if (!holder[curr]){
+          holder[curr] = 1
+      }
+      else if(holder[curr] == 1){
+          holder[curr] ++
+      }
+      else if(holder[curr] == 2){
+          nums.splice(i,1)
+      }  
+  }
+};
+
