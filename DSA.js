@@ -929,3 +929,11 @@ var plusOne = function(digits) {
   digits.unshift(1); // Add 1 to the beginning of the array
   return digits;
 };
+
+/*
+Iterate through the digits array in reverse order.
+If the current digit is 9, reset it to 0 and move to the previous digit.
+If the current digit is not 9, increment it and return the digits array.
+If we reach the end of the array, add 1 to the beginning of the array.
+*/
+
