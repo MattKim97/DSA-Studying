@@ -912,3 +912,20 @@ If the current element is not in the object, add it to the object.
 If the current element is in the object, increment the value.
 If the value is 2, remove the element from the array.
 */
+var plusOne = function(digits) {
+  let i = digits.length - 1;
+
+  while (i >= 0) {
+      if (digits[i] === 9) {
+          digits[i] = 0; // Reset the current digit to 0 if it's 9
+          i--; // Move to the previous digit
+      } else {
+          digits[i]++; // Increment the current digit
+          return digits; // Return the digits array since no further carrying over is needed
+      }
+  }
+
+  // If we reach here, it means we need to add an additional digit (e.g., 999 + 1 = 1000)
+  digits.unshift(1); // Add 1 to the beginning of the array
+  return digits;
+};
