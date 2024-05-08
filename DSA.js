@@ -937,3 +937,11 @@ If the current digit is not 9, increment it and return the digits array.
 If we reach the end of the array, add 1 to the beginning of the array.
 */
 
+
+var isPalindrome = function(x) {
+  let string = x.toString()
+  let reversestring = string.split("").reverse().join("")
+  return x == reversestring
+};
+
+
