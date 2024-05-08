@@ -945,3 +945,9 @@ var isPalindrome = function(x) {
 };
 
 
+/*
+Convert the number to a string.
+Reverse the string.
+Check if the original number is equal to the reversed string.
+Return true if they are equal, false otherwise.
+*/
