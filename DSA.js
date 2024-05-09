@@ -955,3 +955,7 @@ var mySqrt = function(x) {
   return Math.floor(Math.sqrt(x))
 };
 
+/*
+Return the square root of x and round down to the nearest integer.
+*/
+
