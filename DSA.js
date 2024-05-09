@@ -951,3 +951,7 @@ Reverse the string.
 Check if the original number is equal to the reversed string.
 Return true if they are equal, false otherwise.
 */
+var mySqrt = function(x) {
+  return Math.floor(Math.sqrt(x))
+};
+
